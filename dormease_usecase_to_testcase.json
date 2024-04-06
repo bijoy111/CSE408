@@ -1,0 +1,570 @@
+[
+    {
+        "usecase": {
+            "name": "Complaint Submission",
+            "scenario": "Student submits a complaint to the hall authority and the hall authority responds to the complaint",
+            "actors": "Student, Hall Authority",
+            "preconditions": "Student is registered in the hall",
+            "steps": [
+                "Student inputs the complaint title and details",
+                "Student submits the complaint",
+                "Hall authority receives the complaint"
+            ]
+        },
+        "testcases": [
+            {
+                "name": "Valid Complaint Submission",
+                "description": "Verify that a student can successfully submit a complaint.",
+                "input": {
+                    "title": "Noisy Neighbours",
+                    "details": "My neighbours are too noisy at night."
+                },
+                "expected": {
+                    "outcome": "Complaint submitted",
+                    "status": "Submitted"
+                }
+            },
+            {
+                "name": "Invalid Complaint Submission",
+                "description": "Verify that a student cannot submit a complaint without a title.",
+                "input": {
+                    "title": "",
+                    "details": "My neighbours are too noisy at night."
+                },
+                "expected": {
+                    "outcome": "Complaint not submitted",
+                    "status": "Not Submitted"
+                }
+            },
+            {
+                "name": "Valid Complaint Response",
+                "description": "Verify that the hall authority can successfully respond to a complaint.",
+                "input": {
+                    "response": "We will look into the matter."
+                },
+                "expected": {
+                    "outcome": "Complaint responded to",
+                    "status": "Responded"
+                }
+            },
+            {
+                "name": "Invalid Complaint Response",
+                "description": "Verify that the hall authority cannot respond to a complaint without a response.",
+                "input": {
+                    "response": ""
+                },
+                "expected": {
+                    "outcome": "Complaint not responded to",
+                    "status": "Not Responded"
+                }
+            },
+            {
+                "name": "Valid Complaint Status",
+                "description": "Verify that a student can view the status of a complaint.",
+                "input": {
+                    "complaint": "Noisy Neighbours"
+                },
+                "expected": {
+                    "outcome": "Complaint status viewed",
+                    "status": "Viewed"
+                }
+            },
+            {
+                "name": "Invalid Complaint Status",
+                "description": "Verify that a student cannot view the status of a complaint that does not exist.",
+                "input": {
+                    "complaint": "Noisy Neighbours"
+                },
+                "expected": {
+                    "outcome": "Complaint status not viewed",
+                    "status": "Not Viewed"
+                }
+            },
+            {
+                "name": "Valid Complaint History",
+                "description": "Verify that a student can view the history of a complaint.",
+                "input": {
+                    "complaint": "Noisy Neighbours"
+                },
+                "expected": {
+                    "outcome": "Complaint history viewed",
+                    "status": "Viewed"
+                }
+            },
+            {
+                "name": "Invalid Complaint History",
+                "description": "Verify that a student cannot view the history of a complaint that does not exist.",
+                "input": {
+                    "complaint": "Noisy Neighbours"
+                },
+                "expected": {
+                    "outcome": "Complaint history not viewed",
+                    "status": "Not Viewed"
+                }
+            },
+            {
+                "name": "Valid Complaint Deletion",
+                "description": "Verify that a student can delete a complaint.",
+                "input": {
+                    "complaint": "Noisy Neighbours"
+                },
+                "expected": {
+                    "outcome": "Complaint deleted",
+                    "status": "Deleted"
+                }
+            },
+            {
+                "name": "Invalid Complaint Deletion",
+                "description": "Verify that a student cannot delete a complaint that does not exist.",
+                "input": {
+                    "complaint": "Noisy Neighbours"
+                },
+                "expected": {
+                    "outcome": "Complaint not deleted",
+                    "status": "Not Deleted"
+                }
+            },
+            {
+                "name": "Valid Complaint Search",
+                "description": "Verify that a student can search for a complaint.",
+                "input": {
+                    "complaint": "Noisy Neighbours"
+                },
+                "expected": {
+                    "outcome": "Complaint found",
+                    "status": "Found"
+                }
+            },
+            {
+                "name": "Invalid Complaint Search",
+                "description": "Verify that a student cannot search for a complaint that does not exist.",
+                "input": {
+                    "complaint": "Noisy Neighbours"
+                },
+                "expected": {
+                    "outcome": "Complaint not found",
+                    "status": "Not Found"
+                }
+            }
+        ]
+    },
+    {
+        "usecase": {
+            "name": "Dining Management",
+            "scenario": "Student takes lunch and dinner meals from the dining hall and the dining hall authority manages the daily meal records",
+            "actors": "Student, Dining Hall Authority",
+            "preconditions": "Student is registered in the hall",
+            "steps": [
+                "Student takes lunch",
+                "Student takes dinner",
+                "Dining hall authority records the meals taken by the student"
+            ]
+        },
+        "testcases": [
+            {
+                "name": "Valid Lunch Meal",
+                "description": "Verify that a student can successfully take a lunch meal.",
+                "input": {
+                    "lunch_taken": true
+                },
+                "expected": {
+                    "outcome": "Lunch meal taken",
+                    "status": "Taken"
+                }
+            },
+            {
+                "name": "Invalid Lunch Meal",
+                "description": "Verify that a student cannot take a lunch meal",
+                "input": {
+                    "lunch_taken": false
+                },
+                "expected": {
+                    "outcome": "Lunch meal not taken",
+                    "status": "Not Taken"
+                }
+            },
+            {
+                "name": "Valid Dinner Meal",
+                "description": "Verify that a student can successfully take a dinner meal.",
+                "input": {
+                    "dinner_taken": true
+                },
+                "expected": {
+                    "outcome": "Dinner meal taken",
+                    "status": "Taken"
+                }
+            },
+            {
+                "name": "Invalid Dinner Meal",
+                "description": "Verify that a student cannot take a dinner meal",
+                "input": {
+                    "dinner_taken": false
+                },
+                "expected": {
+                    "outcome": "Dinner meal not taken",
+                    "status": "Not Taken"
+                }
+            },
+            {
+                "name": "Valid Meal Record",
+                "description": "Verify that the dining hall authority can successfully record the meals taken by a student.",
+                "input": {
+                    "meal": "Lunch"
+                },
+                "expected": {
+                    "outcome": "Lunch meal record taken",
+                    "status": "Taken"
+                }
+            },
+            {
+                "name": "Valid Meal History",
+                "description": "Verify that a student can view the history of meals taken.",
+                "input": {
+                    "meal": "Lunch"
+                },
+                "expected": {
+                    "outcome": "Meal history viewed",
+                    "status": "Viewed"
+                }
+            },
+            {
+                "name": "Invalid Meal History",
+                "description": "Verify that a student cannot view the history of meals taken that does not exist.",
+                "input": {
+                    "meal": "Lunch"
+                },
+                "expected": {
+                    "outcome": "Meal history not viewed",
+                    "status": "Not Viewed"
+                }
+            }
+        ]
+
+    },
+    {
+        "usecase": {
+            "name": "Seat Allocation",
+            "scenario": "Student applies for a seat in the hall and the hall authority allocates a seat to the student",
+            "actors": "Student, Hall Authority",
+            "preconditions": "Student is registered in the hall",
+            "steps": [
+                "Student applies for a seat",
+                "Hall authority allocates a seat to the student"
+            ]
+        },
+        "testcases": [
+            {
+                "name": "Valid Seat Application",
+                "description": "Verify that a student can successfully apply for a seat.",
+                "input": {
+                    "room number": "A101",
+                    "seat number": "1"
+                },
+                "expected": {
+                    "outcome": "Seat applied for",
+                    "status": "Applied"
+                }
+            },
+            {
+                "name": "Invalid Seat Application",
+                "description": "Verify that a student cannot apply for a seat that does not exist.",
+                "input": {
+                    "room number": "A101",
+                    "seat number": "1"
+                },
+                "expected": {
+                    "outcome": "Seat not applied for",
+                    "status": "Not Applied"
+                }
+            },
+            {
+                "name": "Valid Seat Allocation",
+                "description": "Verify that the hall authority can successfully allocate a seat to a student.",
+                "input": {
+                    "room number": "A101",
+                    "seat number": "1",
+                    "student_id": "1234"
+                },
+                "expected": {
+                    "outcome": "Seat allocated",
+                    "status": "Allocated"
+                }
+            },
+            {
+                "name": "Invalid Seat Allocation",
+                "description": "Verify that the hall authority cannot allocate a seat that does not exist.",
+                "input": {
+                    "room number": "A101",
+                    "seat number": "1",
+                    "student_id": "1234"
+                },
+                "expected": {
+                    "outcome": "Seat not allocated",
+                    "status": "Not Allocated"
+                }
+            },
+            {
+                "name": "Valid Seat History",
+                "description": "Verify that a student can view the history of seats allocated.",
+                "input": {
+                    "room number": "A101",
+                    "seat number": "1"
+                },
+                "expected": {
+                    "outcome": "Seat history viewed",
+                    "status": "Viewed"
+                }
+            },
+            {
+                "name": "Invalid Seat History",
+                "description": "Verify that a student cannot view the history of seats allocated that does not exist.",
+                "input": {
+                    "room number": "A101",
+                    "seat number": "1"
+                },
+                "expected": {
+                    "outcome": "Seat history not viewed",
+                    "status": "Not Viewed"
+                }
+            }
+        ]
+    },
+    {
+        "usecase": {
+            "name": "Notice Board",
+            "scenario": "Hall authority posts notices on the notice board and students view the notices",
+            "actors": "Student, Hall Authority",
+            "preconditions": "Student is registered in the hall",
+            "steps": [
+                "Hall authority posts a notice",
+                "Student views the notice"
+            ]
+        },
+        "testcases": [
+            {
+                "name": "Valid Notice Posting",
+                "description": "Verify that the hall authority can successfully post a notice.",
+                "input": {
+                    "notice": "Hall Meeting"
+                },
+                "expected": {
+                    "outcome": "Notice posted",
+                    "status": "Posted"
+                }
+            },
+            {
+                "name": "Invalid Notice Posting",
+                "description": "Verify that the hall authority cannot post an invalid notice.",
+                "input": {
+                    "notice": null
+                },
+                "expected": {
+                    "outcome": "Notice not posted",
+                    "status": "Not Posted"
+                }
+            },
+            {
+                "name": "Valid Notice Viewing",
+                "description": "Verify that a student can successfully view a notice.",
+                "input": {
+                    "notice": "Hall Meeting"
+                },
+                "expected": {
+                    "outcome": "Notice viewed",
+                    "status": "Viewed"
+                }
+            },
+            {
+                "name": "Invalid Notice Viewing",
+                "description": "Verify that a student cannot view a notice that does not exist.",
+                "input": {
+                    "notice": "Hall Meeting"
+                },
+                "expected": {
+                    "outcome": "Notice not viewed",
+                    "status": "Not Viewed"
+                }
+            },
+            {
+                "name": "Valid Notice History",
+                "description": "Verify that a student can view the history of notices posted.",
+                "input": {
+                    "notice": "Hall Meeting"
+                },
+                "expected": {
+                    "outcome": "Notice history viewed",
+                    "status": "Viewed"
+                }
+            },
+            {
+                "name": "Invalid Notice History",
+                "description": "Verify that a student cannot view the history of notices posted that does not exist.",
+                "input": {
+                    "notice": "Hall Meeting"
+                },
+                "expected": {
+                    "outcome": "Notice history not viewed",
+                    "status": "Not Viewed"
+                }
+            },
+            {
+                "name": "Valid Notice Deletion",
+                "description": "Verify that the hall authority can successfully delete a notice.",
+                "input": {
+                    "notice": "Hall Meeting"
+                },
+                "expected": {
+                    "outcome": "Notice deleted",
+                    "status": "Deleted"
+                }
+            },
+            {
+                "name": "Invalid Notice Deletion",
+                "description": "Verify that the hall authority cannot delete a notice that does not exist.",
+                "input": {
+                    "notice": "Hall Meeting"
+                },
+                "expected": {
+                    "outcome": "Notice not deleted",
+                    "status": "Not Deleted"
+                }
+            },
+            {
+                "name": "Valid Notice Search",
+                "description": "Verify that a student can search for a notice.",
+                "input": {
+                    "notice": "Hall Meeting"
+                },
+                "expected": {
+                    "outcome": "Notice found",
+                    "status": "Found"
+                }
+            },
+            {
+                "name": "Invalid Notice Search",
+                "description": "Verify that a student cannot search for a notice that does not exist.",
+                "input": {
+                    "notice": "Hall Meeting"
+                },
+                "expected": {
+                    "outcome": "Notice not found",
+                    "status": "Not Found"
+                }
+            },
+            {
+                "name": "Valid Notice Update",
+                "description": "Verify that the hall authority can successfully update a notice.",
+                "input": {
+                    "notice": "Hall Meeting"
+                },
+                "expected": {
+                    "outcome": "Notice updated",
+                    "status": "Updated"
+                }
+            },
+            {
+                "name": "Invalid Notice Update",
+                "description": "Verify that the hall authority cannot update a notice that does not exist.",
+                "input": {
+                    "notice": "Hall Meeting"
+                },
+                "expected": {
+                    "outcome": "Notice not updated",
+                    "status": "Not Updated"
+                }
+            }
+        ]
+    },
+    {
+        "usecase": {
+            "name": "Mess Managing By Most Senior Batch Students",
+            "scenario": "2 or 3 students from most senior batch manages a mess month and the hall authority facilitates the mess management",
+            "actors": "Student, Hall Authority",
+            "preconditions": "Student is registered in the hall",
+            "steps": [
+                "2 or 3 students from most senior batch manages the mess month",
+                "Hall authority facilitates the mess management"
+            ]
+        },
+        "testcases": [
+            {
+                "name": "Apply for Mess Management",
+                "description": "2 or 3 students from most senior batch apply to manage the mess for a month.",
+                "input": {
+                    "applicants": [["1234", "5678", "91011"],[ "23394", "13030"]]
+                },
+                "expected": {
+                    "outcome": "Mess management applied for",
+                    "status": "Applied"
+                }
+            },
+
+            {
+                "name": "Select a group of students for Mess Management",
+                "description": "Hall authority selects a group of students from most senior batch to manage the mess for a month.",
+                "input": {
+                    "applicants": ["1234", "5678", "91011"]
+                },
+                "expected": {
+                    "outcome": "Mess management selected",
+                    "status": "Selected"
+                }
+            },
+            {
+                "name": "Daily Mess Management Record",
+                "description": "Mess managers records the daily mess management activities.",
+                "input": {
+                    "managers": ["1234", "5678", "91011"],
+                    "lunch menu": {
+                        "Rice": "100 kg",
+                        "Fish": "50 kg",
+                        "Chicken": "100 kg",
+                        "Vegetables": "50 kg"
+                    },
+                    "dinner menu": {
+                        "Rice": "100 kg",
+                        "Fish": "50 kg",
+                        "Chicken": "100 kg",
+                        "Vegetables": "50 kg"
+                    },
+                    "lunch":{
+                        "lunch served": 200,
+                        "lunch taken": 150
+                    },
+                    "dinner":{
+                        "dinner served": 200,
+                        "dinner taken": 150
+                    }
+                },
+                "expected": {
+                    "outcome": "Mess management recorded",
+                    "status": "Recorded"
+                }
+            },
+            {
+                "name": "Mess Management History",
+                "description": "Verify that a student can view the history of mess management activities.",
+                "input": {
+                    "mess month": "January",
+                    "year": "2021"
+                },
+                "expected": {
+                    "outcome": "Mess management history viewed",
+                    "status": "Viewed"
+                }
+            },
+            {
+                "name": "Invalid Mess Management History",
+                "description": "Verify that a student cannot view the history of mess management activities that does not exist.",
+                "input": {
+                    "mess month": "January",
+                    "year": "2021"
+                },
+                "expected": {
+                    "outcome": "Mess management history not viewed",
+                    "status": "Not Viewed"
+                }
+            }
+        ]
+    }
+]
